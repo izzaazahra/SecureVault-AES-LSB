@@ -1473,28 +1473,35 @@
                 <!-- Menu Navigasi Kiri -->
                 <div class="col-lg-4">
                     <div class="list-group custom-list-group" id="list-tab" role="tablist">
-                        <!-- Tab 1 -->
+                        <!-- Tab 1: Keamanan -->
                         <a class="list-group-item list-group-item-action active" id="list-keamanan-list" data-bs-toggle="list" href="#list-keamanan" role="tab">
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-network-wired me-3 fs-5"></i>
                                 <span>Keamanan Jaringan</span>
                             </div>
                         </a>
-                        <!-- Tab 2 -->
+                        <!-- Tab 2: Kriptografi -->
                         <a class="list-group-item list-group-item-action" id="list-kripto-list" data-bs-toggle="list" href="#list-kripto" role="tab">
                             <div class="d-flex align-items-center">
-                                <i class="fas fa-user-secret me-3 fs-5"></i>
-                                <span>Kriptografi vs Steganografi</span>
+                                <i class="fas fa-key me-3 fs-5"></i>
+                                <span>Kriptografi</span>
                             </div>
                         </a>
-                        <!-- Tab 3 -->
+                        <!-- Tab 3: AES -->
                         <a class="list-group-item list-group-item-action" id="list-aes-list" data-bs-toggle="list" href="#list-aes" role="tab">
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-shield-alt me-3 fs-5"></i>
-                                <span>AES (Advanced Encryption)</span>
+                                <span>AES (Advanced Encryption Standard)</span>
                             </div>
                         </a>
-                        <!-- Tab 4 -->
+                        <!-- Tab 4: Steganografi -->
+                        <a class="list-group-item list-group-item-action" id="list-stego-list" data-bs-toggle="list" href="#list-stego" role="tab">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-user-secret me-3 fs-5"></i>
+                                <span>Steganografi</span>
+                            </div>
+                        </a>
+                        <!-- Tab 5: LSB -->
                         <a class="list-group-item list-group-item-action" id="list-lsb-list" data-bs-toggle="list" href="#list-lsb" role="tab">
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-images me-3 fs-5"></i>
@@ -1516,18 +1523,18 @@
                                 </div>
                                 <h3 class="mb-0 fw-bold">Keamanan Jaringan</h3>
                             </div>
-                            <p class="fs-6 text-muted" style="line-height: 1.8;">Keamanan jaringan adalah praktik mencegah dan memantau akses tidak sah, penyalahgunaan, modifikasi, atau penolakan terhadap jaringan komputer dan sumber daya yang dapat diakses jaringan. Tujuannya adalah menjaga <strong>Kerahasiaan (Confidentiality)</strong>, <strong>Integritas (Integrity)</strong>, dan <strong>Ketersediaan (Availability)</strong> data.</p>
+                            <p class="fs-6 text-muted" style="line-height: 1.8;">Keamanan jaringan mencakup kebijakan, prosedur, dan instrumen teknis yang dirancang untuk mencegah serta memantau akses ilegal, modifikasi struktural, penyalahgunaan, atau gangguan pada infrastruktur jaringan komputer. Berdasarkan standar keamanan informasi, tujuan utamanya adalah mempertahankan prinsip CIA Triad: <strong>Confidentiality</strong> (kerahasiaan data), <strong>Integrity</strong> (keutuhan data dari manipulasi), dan <strong>Availability</strong> (ketersediaan layanan bagi pihak yang berwenang) (Stallings, 2017).</p>
                         </div>
                         
-                        <!-- Konten 2: Kriptografi vs Steganografi -->
+                        <!-- Konten 2: Kriptografi -->
                         <div class="tab-pane fade" id="list-kripto" role="tabpanel">
                             <div class="d-flex align-items-center mb-4 border-bottom pb-3">
                                 <div class="bg-primary bg-opacity-10 text-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                    <i class="fas fa-user-secret"></i>
+                                    <i class="fas fa-key"></i>
                                 </div>
-                                <h3 class="mb-0 fw-bold">Kriptografi vs Steganografi</h3>
+                                <h3 class="mb-0 fw-bold">Kriptografi</h3>
                             </div>
-                            <p class="fs-6 text-muted" style="line-height: 1.8;"><strong>Kriptografi</strong> mengamankan data dengan mengubahnya menjadi bentuk yang tidak bisa dibaca (acak). <br><br><strong>Steganografi</strong> mengamankan data dengan menyembunyikan keberadaannya di dalam media lain (misal gambar). <br><br>Kombinasi keduanya menciptakan sistem "Double Security": Penyerang tidak tahu ada pesan, dan kalaupun tahu, mereka tidak bisa membacanya.</p>
+                            <p class="fs-6 text-muted" style="line-height: 1.8;">Kriptografi adalah ilmu dan seni yang berfokus pada pengamanan data atau pesan dengan mentransformasikan data asli (<em>plaintext</em>) menjadi bentuk acak yang tidak dapat dibaca (<em>ciphertext</em>) menggunakan kunci matematis tertentu. Hanya pihak yang memiliki kunci yang sah yang dapat mengembalikan bentuknya menjadi <em>plaintext</em> (proses dekripsi), sehingga kerahasiaan informasi tetap terjaga dari pihak yang tidak berwenang (Schneier, 1996).</p>
                         </div>
 
                         <!-- Konten 3: AES -->
@@ -1538,10 +1545,21 @@
                                 </div>
                                 <h3 class="mb-0 fw-bold">AES (Advanced Encryption Standard)</h3>
                             </div>
-                            <p class="fs-6 text-muted" style="line-height: 1.8;">Algoritma kriptografi simetris yang diakui secara global sebagai standar enkripsi. Sistem ini menggunakan mode <em>CBC (Cipher Block Chaining)</em> dengan kunci 256-bit yang diturunkan dari password pengguna menggunakan fungsi hash SHA-256. Sangat kuat terhadap serangan brute-force.</p>
+                            <p class="fs-6 text-muted" style="line-height: 1.8;">Advanced Encryption Standard (AES) adalah standar algoritma kriptografi simetris berbasis blok (<em>block cipher</em>) yang ditetapkan oleh National Institute of Standards and Technology (NIST FIPS 197). Menggunakan ukuran blok 128-bit dengan variasi panjang kunci 128, 192, atau 256-bit. Dalam implementasi modern, sistem sering kali dikombinasikan dengan mode operasi seperti <em>CBC (Cipher Block Chaining)</em> dan fungsi penurunan kunci berbasis SHA-256 untuk memberikan perlindungan tingkat tinggi terhadap berbagai metode serangan kriptanalisis (NIST, 2001).</p>
                         </div>
 
-                        <!-- Konten 4: LSB -->
+                        <!-- Konten 4: Steganografi -->
+                        <div class="tab-pane fade" id="list-stego" role="tabpanel">
+                            <div class="d-flex align-items-center mb-4 border-bottom pb-3">
+                                <div class="bg-primary bg-opacity-10 text-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-user-secret"></i>
+                                </div>
+                                <h3 class="mb-0 fw-bold">Steganografi</h3>
+                            </div>
+                            <p class="fs-6 text-muted" style="line-height: 1.8;">Steganografi adalah seni dan ilmu menyembunyikan eksistensi keberadaan pesan rahasia di dalam media digital penampung (<em>cover medium</em>) yang tampak biasa saja (seperti citra, audio, atau video) tanpa menimbulkan kecurigaan visual atau auditif bagi pengamat luar. Fokus utama steganografi adalah menyembunyikan fakta bahwa komunikasi rahasia sedang berlangsung (Fridrich, 2009).</p>
+                        </div>
+
+                        <!-- Konten 5: LSB -->
                         <div class="tab-pane fade" id="list-lsb" role="tabpanel">
                             <div class="d-flex align-items-center mb-4 border-bottom pb-3">
                                 <div class="bg-primary bg-opacity-10 text-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 1.5rem;">
@@ -1549,13 +1567,13 @@
                                 </div>
                                 <h3 class="mb-0 fw-bold">LSB (Least Significant Bit)</h3>
                             </div>
-                            <p class="fs-6 text-muted" style="line-height: 1.8;">Teknik steganografi dengan mengganti bit terakhir (paling kanan) dari nilai warna piksel (RGB). Karena perubahan pada bit terakhir hanya mengubah nilai warna sebesar 1 satuan, mata manusia tidak dapat melihat perbedaannya. Sistem ini juga menggunakan <em>Randomized LSB</em> (posisi disisipkan secara acak berdasarkan password) agar lebih aman dari deteksi.</p>
+                            <p class="fs-6 text-muted" style="line-height: 1.8;">Least Significant Bit (LSB) adalah teknik steganografi spasial yang bekerja dengan cara mengganti bit paling kanan (bit dengan bobot nilai terkecil) dari representasi biner komponen warna piksel (Red, Green, Blue) pada citra digital. Modifikasi pada bit ini hanya menghasilkan perubahan intensitas warna sebesar 1 satuan, sehingga degradasi atau perubahan piksel tidak dapat dideteksi oleh indra penglihatan manusia (<em>Human Visual System</em>). Untuk meningkatkan ketahanan, teknik ini sering dipadukan dengan pendekatan pseudorandom dalam penentuan posisi indeks piksel penyisipan (Katzenbeisser &amp; Petitcolas, 2000).</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section>gi
 
     <!-- Evaluasi (Metric Cards Dashboard) -->
     <section class="py-5 bg-light" id="evaluasi">
