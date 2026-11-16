@@ -1667,107 +1667,108 @@
     </section>
 
     <!-- Tim Pengembang (Interactive Light Profile) -->
-    <section class="py-5 bg-white" id="tim">
-        <div class="container py-4">
-            <h2 class="section-title mb-5">Tim Pengembang</h2>
+<section class="py-5 bg-white" id="tim">
+    <div class="container py-4">
+        <h2 class="section-title mb-5">Tim Pengembang</h2>
+        
+        <!-- TAMPILAN GRID KARTU (Awal) -->
+        <div class="row g-4 justify-content-center" id="team-grid">
             
-            <!-- TAMPILAN GRID KARTU (Awal) -->
-            <div class="row g-4 justify-content-center" id="team-grid">
-                
-                <!-- Kartu 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card-light" onclick="showProfile(1)">
-                        <div class="avatar-circle">
-                            <i class="fas fa-user-shield"></i>
-                        </div>
-                        <h4 class="fw-bold text-dark mt-3 mb-1">Nurul Izza Azahra</h4>
-                        <p class="text-primary fw-bold mb-2" style="font-size: 0.9rem;">Website Developer</p>
-                        <p class="text-muted small"><i class="fas fa-id-badge me-1"></i> 230533604066</p>
-                        <button class="btn btn-outline-primary btn-sm rounded-pill mt-3 px-4">Lihat Profil</button>
+            <!-- Kartu 1: Nurul Izza Azahra -->
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card-light" onclick="showProfile(1)">
+                    <div class="avatar-circle overflow-hidden p-0 shadow-sm" style="width: 100px; height: 100px; margin: 0 auto;">
+                        <img src="{{ url_for('static', filename='ija.png') }}" alt="Nurul Izza Azahra" class="w-100 h-100 object-fit-cover">
                     </div>
+                    <h4 class="fw-bold text-dark mt-3 mb-1">Nurul Izza Azahra</h4>
+                    <p class="text-primary fw-bold mb-2" style="font-size: 0.9rem;">Website Developer</p>
+                    <p class="text-muted small"><i class="fas fa-id-badge me-1"></i> 230533604066</p>
+                    <button class="btn btn-outline-primary btn-sm rounded-pill mt-3 px-4">Lihat Profil</button>
                 </div>
-
-                <!-- Kartu 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card-light" onclick="showProfile(2)">
-                        <div class="avatar-circle">
-                            <i class="fas fa-user-secret"></i>
-                        </div>
-                        <h4 class="fw-bold text-dark mt-3 mb-1">Nilam Maharani</h4>
-                        <p class="text-primary fw-bold mb-2" style="font-size: 0.9rem;">UI/UX Specialist</p>
-                        <p class="text-muted small"><i class="fas fa-id-badge me-1"></i> 230533605598</p>
-                        <button class="btn btn-outline-primary btn-sm rounded-pill mt-3 px-4">Lihat Profil</button>
-                    </div>
-                </div>
-
-                <!-- Kartu 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card-light" onclick="showProfile(3)">
-                        <div class="avatar-circle">
-                            <i class="fas fa-user-astronaut"></i>
-                        </div>
-                        <h4 class="fw-bold text-dark mt-3 mb-1">Viria Rihadatul S.</h4>
-                        <p class="text-primary fw-bold mb-2" style="font-size: 0.9rem;">Security Analyst</p>
-                        <p class="text-muted small"><i class="fas fa-id-badge me-1"></i> 230533607483</p>
-                        <button class="btn btn-outline-primary btn-sm rounded-pill mt-3 px-4">Lihat Profil</button>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- TAMPILAN DETAIL PROFIL (Tersembunyi Awalnya) -->
-            <div class="team-detail-container d-none" id="team-detail">
-                <!-- Tombol Close (X) -->
-                <button class="btn-close-custom" onclick="closeProfile()">
-                    <i class="fas fa-times"></i>
-                </button>
+            <!-- Kartu 2: Nilam Maharani -->
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card-light" onclick="showProfile(2)">
+                    <div class="avatar-circle overflow-hidden p-0 shadow-sm" style="width: 100px; height: 100px; margin: 0 auto;">
+                        <img src="{{ url_for('static', filename='nilam.png') }}" alt="Nilam Maharani" class="w-100 h-100 object-fit-cover">
+                    </div>
+                    <h4 class="fw-bold text-dark mt-3 mb-1">Nilam Maharani</h4>
+                    <p class="text-primary fw-bold mb-2" style="font-size: 0.9rem;">UI/UX Specialist</p>
+                    <p class="text-muted small"><i class="fas fa-id-badge me-1"></i> 230533605598</p>
+                    <button class="btn btn-outline-primary btn-sm rounded-pill mt-3 px-4">Lihat Profil</button>
+                </div>
+            </div>
 
-                <div class="row align-items-center h-100">
-                    <!-- Kiri: Informasi -->
-                    <div class="col-md-7 order-2 order-md-1">
-                        <h6 class="text-primary fw-bold mb-2 tracking-wide">PROFIL ANGGOTA</h6>
-                        <h2 class="display-5 fw-bold text-dark mb-3" id="detail-name">Nama</h2>
-                        <h5 class="text-secondary mb-4" id="detail-role">Role</h5>
-                        
-                        <div class="info-list">
-                            <div class="info-item">
-                                <i class="fas fa-id-badge"></i>
-                                <div>
-                                    <span class="text-muted small d-block">NIM</span>
-                                    <span class="fw-bold" id="detail-nim">-</span>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-university"></i>
-                                <div>
-                                    <span class="text-muted small d-block">Universitas</span>
-                                    <span class="fw-bold">Universitas Negeri Malang</span>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <div>
-                                    <span class="text-muted small d-block">Program Studi</span>
-                                    <span class="fw-bold">S1 Pendidikan Teknik Informatika</span>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Kartu 3: Viria Rihadatul S. -->
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card-light" onclick="showProfile(3)">
+                    <div class="avatar-circle overflow-hidden p-0 shadow-sm" style="width: 100px; height: 100px; margin: 0 auto;">
+                        <img src="{{ url_for('static', filename='viria.png') }}" alt="Viria Rihadatul S." class="w-100 h-100 object-fit-cover">
                     </div>
-                    
-                    <!-- Kanan: Gambar/Ilustrasi Besar -->
-                    <div class="col-md-5 order-1 order-md-2 text-center mb-4 mb-md-0">
-                        <div class="big-avatar-wrapper" id="detail-image-container">
-                            <i class="fas fa-user-shield" id="detail-icon"></i>
-                            <!-- Efek Dekorasi -->
-                            <div class="deco-circle-1"></div>
-                            <div class="deco-circle-2"></div>
-                        </div>
-                    </div>
+                    <h4 class="fw-bold text-dark mt-3 mb-1">Viria Rihadatul S.</h4>
+                    <p class="text-primary fw-bold mb-2" style="font-size: 0.9rem;">Security Analyst</p>
+                    <p class="text-muted small"><i class="fas fa-id-badge me-1"></i> 230533607483</p>
+                    <button class="btn btn-outline-primary btn-sm rounded-pill mt-3 px-4">Lihat Profil</button>
                 </div>
             </div>
 
         </div>
-    </section>
+
+        <!-- TAMPILAN DETAIL PROFIL (Tersembunyi Awalnya) -->
+        <div class="team-detail-container d-none position-relative p-4 rounded-4 shadow-sm bg-light" id="team-detail">
+            <!-- Tombol Close (X) -->
+            <button class="btn-close-custom position-absolute top-0 end-0 m-3 btn btn-sm btn-outline-secondary rounded-circle" onclick="closeProfile()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="row align-items-center h-100">
+                <!-- Kiri: Informasi -->
+                <div class="col-md-7 order-2 order-md-1">
+                    <h6 class="text-primary fw-bold mb-2 tracking-wide">PROFIL ANGGOTA</h6>
+                    <h2 class="display-5 fw-bold text-dark mb-3" id="detail-name">Nama</h2>
+                    <h5 class="text-secondary mb-4" id="detail-role">Role</h5>
+                    
+                    <div class="info-list">
+                        <div class="info-item d-flex align-items-center mb-3">
+                            <i class="fas fa-id-badge text-primary fs-4 me-3"></i>
+                            <div>
+                                <span class="text-muted small d-block">NIM</span>
+                                <span class="fw-bold" id="detail-nim">-</span>
+                            </div>
+                        </div>
+                        <div class="info-item d-flex align-items-center mb-3">
+                            <i class="fas fa-university text-primary fs-4 me-3"></i>
+                            <div>
+                                <span class="text-muted small d-block">Universitas</span>
+                                <span class="fw-bold">Universitas Negeri Malang</span>
+                            </div>
+                        </div>
+                        <div class="info-item d-flex align-items-center mb-3">
+                            <i class="fas fa-graduation-cap text-primary fs-4 me-3"></i>
+                            <div>
+                                <span class="text-muted small d-block">Program Studi</span>
+                                <span class="fw-bold">S1 Pendidikan Teknik Informatika</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Kanan: Gambar/Ilustrasi Besar -->
+                <div class="col-md-5 order-1 order-md-2 text-center mb-4 mb-md-0">
+                    <div class="big-avatar-wrapper" id="detail-image-container">
+                        <!-- Gambar dibungkus sendiri agar bulat dan pas dengan ukuran wrapper CSS aslimu -->
+                        <img src="" alt="Foto Profil Detail" id="detail-img" class="w-100 h-100 rounded-circle object-fit-cover" style="position: relative; z-index: 2;">
+                        <!-- Efek Dekorasi Asli (Biarkan ikut CSS bawaanmu sepenuhnya) -->
+                        <div class="deco-circle-1"></div>
+                        <div class="deco-circle-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="custom-footer pt-5 pb-4">
@@ -2289,26 +2290,27 @@
 
         // FUNGSI INTERAKSI PROFIL TIM
         // Data Tim (Bisa disesuaikan)
-        const teamData = {
+            const teamData = {
             1: {
                 name: "Nurul Izza Azahra",
                 role: "Web Developer & Cryptographer",
                 nim: "230533604066",
-                icon: "fa-user-shield"
+                img: "{{ url_for('static', filename='ija.png') }}"
             },
             2: {
                 name: "Nilam Maharani",
                 role: "UI/UX & Steganography Specialist",
                 nim: "230533605598",
-                icon: "fa-user-secret"
+                img: "{{ url_for('static', filename='nilam.png') }}"
             },
             3: {
                 name: "Viria Rihadatul Salzabil",
                 role: "Network Security Analyst",
                 nim: "230533607483",
-                icon: "fa-user-astronaut"
+                img: "{{ url_for('static', filename='viria.png') }}"
             }
         };
+
         function showProfile(id) {
             // 1. Sembunyikan Grid, Tampilkan Detail
             document.getElementById('team-grid').classList.add('d-none');
@@ -2323,9 +2325,11 @@
             document.getElementById('detail-role').innerText = data.role;
             document.getElementById('detail-nim').innerText = data.nim;
             
-            // 4. Update Ikon Avatar Besar
-            const iconElement = document.getElementById('detail-icon');
-            iconElement.className = `fas ${data.icon}`;
+            // 4. Update Gambar Avatar Besar (Diperbaiki dari icon menjadi img)
+            const imgElement = document.getElementById('detail-img');
+            if (imgElement) {
+                imgElement.src = data.img;
+            }
             
             // 5. Scroll perlahan ke bagian tim dengan memperhitungkan tinggi navbar
             const timSection = document.getElementById('tim');
